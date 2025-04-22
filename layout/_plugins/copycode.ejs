@@ -8,11 +8,7 @@
         toast: `<%- conf.toast %>`,
       };
       // utils.js('/js/plugins/copycode.js');
-      if (theme.cdn.enabled) {
-        utils.js(theme.cdn.url + '/js/plugins/copycode.js');
-      } else {
-        utils.js('/js/plugins/copycode.js');
-      }
+      utils.js('https://cdn.jsdelivr.net/gh/mojimoon/blog@v20250422/js/plugins/copycode.js');
     }
   });
 </script>
