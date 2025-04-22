@@ -7,7 +7,12 @@
         success_text: `<%- conf.success_text %>`,
         toast: `<%- conf.toast %>`,
       };
-      utils.js('/js/plugins/copycode.js');
+      // utils.js('/js/plugins/copycode.js');
+      if (theme.cdn.enabled) {
+        utils.js(theme.cdn.url + '/js/plugins/copycode.js');
+      } else {
+        utils.js('/js/plugins/copycode.js');
+      }
     }
   });
 </script>

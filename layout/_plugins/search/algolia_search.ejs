@@ -7,6 +7,11 @@
       js: '<%- conf.js %>',
       hitsPerPage: 100, 
     };
-    utils.js('/js/search/algolia-search.js', { defer: true });
+    // utils.js('/js/search/algolia-search.js', { defer: true });
+    if (theme.cdn.enabled) {
+      utils.js(theme.cdn.url + '/js/search/algolia-search.js', { defer: true });
+    } else {
+      utils.js('/js/search/algolia-search.js', { defer: true });
+    }
   });
 </script>

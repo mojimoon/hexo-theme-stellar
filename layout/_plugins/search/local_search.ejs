@@ -3,6 +3,11 @@
     ctx.search = {
       path: `<%- conf.path || '/search.json' %>`,
     }
-    utils.js('/js/search/local-search.js', { defer: true });
+    // utils.js('/js/search/local-search.js', { defer: true });
+    if (theme.cdn.enabled) {
+      utils.js(theme.cdn.url + '/js/search/local-search.js', { defer: true });
+    } else {
+      utils.js('/js/search/local-search.js', { defer: true });
+    }
   });
 </script>
